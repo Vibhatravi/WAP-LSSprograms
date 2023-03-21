@@ -1,1 +1,1 @@
-# vibhatr
+# LSS WAP and other projects
