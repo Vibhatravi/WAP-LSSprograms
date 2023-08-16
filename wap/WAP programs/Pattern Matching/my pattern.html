@@ -1,0 +1,36 @@
+<Doctype html>
+    <html>
+        <head>
+            <title>Login Page</title>
+        </head>
+        <body>
+            <center><h2>Login page</h2>
+                <form>
+                    Username: <input type = "text" name="userid" required><br><br>
+                    Password: <input type = "text" name="pswrd" required><br><br>
+                    <input type="button" onclick="check(this.form)" value="Login" required>
+                   <input type="reset">
+                </form>
+
+<script>
+                var ck_username = /^1[A-ZA-Z0-90-9A-ZA-ZA-Z0-90-90-9]{10,}$/;
+                var ck_password = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+                function check(form)
+                    {
+                           var user_id = form.userid.value;
+                           var pass = form.user.pswrd;
+                           if((ck_username.test(user_id))&&(ck_password.test(pass)))
+                                {
+                                    alert("Welcome to World of Web! ");
+                                    document.write(Date()+"   " +"Welcome"+userid);
+                                        document.body.bgColor="green";
+                                } 
+                            else
+                                {
+                                    alert("INCORRECT USERNAME OR PASSWORD ! ")
+                                }
+                    }
+</script>
+</body>
+</html>
