@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        h2 {
+            color: coral;
+            font-style: italic;
+            padding-bottom: 5%;
+            font-size: 250%;
+        }
+
+        form {
+            color: brown;
+            font-family: cursive;
+            font-size: 190%;
+        }
+
+        div {
+            text-align: left;
+            color: firebrick;
+            padding-left: 0%;
+            color: indigo
+        }
+
+        p {
+            padding-left: 10%;
+            color: tomato;
+        }
+
+        #userid:hover {
+            background-color: rgb(150, 196, 161);
+            width: 300px;
+            height: 50px;
+        }
+
+        #passwd:hover {
+            background-color: rgb(220, 162, 162);
+            width: 300px;
+            height: 50px;
+        }
+
+        #submit:hover {
+            width: 75px;
+            height: 40px;
+        }
+
+        #submit:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h2>Login page</h2>
+        <form>
+            Username: <input id="userid" type="text" name="userid" required><br><br>
+            Password: <input id="passwd" type="password" name="pswrd" required><br><br>
+            <input id="submit" type="submit" value="Login" onclick="check(this.form)" disabled>
+            <input type="reset">
+        </form>
+        <script>
+            const USERNAME_REGEX = /^[A-Za-z0-9!_@]{10,}$/;
+            const passw = /^(?=.*[0-9])(?=.*[!@#$%^&*])*[a-zA-Z0-9!@#$%^&*]{8,15}$/;
+
+            function check(form) {
+                const userId = form.userid.value;
+                const password = form.pswrd.value;
+                if (USERNAME_REGEX.test(userId) && passw.test(password)) {
+                    alert("Welcome to World of Web!");
+                    document.write(`${Date()} Welcome ${userId}`);
+                    document.body.bgColor = Math.random();
+                } else {
+                    alert("INCORRECT USERNAME OR PASSWORD!");
+                }
+            }
+
+            document.getElementById('userid').addEventListener('input', validateForm);
+            document.getElementById('passwd').addEventListener('input', validateForm);
+
+            function validateForm() {
+                const userId = document.getElementById('userid').value;
+                const password = document.getElementById('passwd').value;
+                const submitBtn = document.getElementById('submit');
+                submitBtn.disabled = !(USERNAME_REGEX.test(userId) && passw.test(password));
+            }
+        </script>
+</body>
+</html>

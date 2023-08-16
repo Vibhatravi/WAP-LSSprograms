@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>STUDENT INFORMATION</title>
+		<link rel="stylesheet" href="lab3.css">
+		<script>
+                        function loadXMLDoc() {
+                                var xmlhttp = new XMLHttpRequest();
+                                xmlhttp.onreadystatechange = function () {
+                                        if (this.readyState == 4 && this.status == 200) {
+                                                stddetails(this);
+                                        }
+                                };
+                                xmlhttp.open("GET", "student1.xml", true);
+                                xmlhttp.send();
+                        }
+                        function stddetails(xml) {
+                                var i;
+                                var xmlDoc = xml.responseXML;
+                                var tables ="<tr><th>NAME</th><th>USN</th><th>BRANCH</th><th>YEAR</th><th>ADDRESS</th></tr>";
+                                var x = xmlDoc.getElementsByTagName("student");
+                                for (i = 0; i < x.length; i++) {
+                                        tables += "<tr><td>" +
+                                                x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "</td><td>" +
+                                                x[i].getElementsByTagName("usn")[0].childNodes[0].nodeValue + "</td><td>" +
+                                                x[i].getElementsByTagName("branch")[0].childNodes[0].nodeValue + "</td><td>" +
+                                                x[i].getElementsByTagName("year")[0].childNodes[0].nodeValue + "</td><td>" +
+                                                x[i].getElementsByTagName("address")[0].childNodes[0].nodeValue + "</td></tr>" ;
+                                }
+                                document.getElementById("tab").innerHTML = tables;
+                        }
+                </script>
+	</head>
+	<body>
+		<button type="button" onclick="loadXMLDoc()">GET STUDENT INFORMATION</button>	
+		<br>
+		<table id="tab"></table>	
+	</body>
+</html>

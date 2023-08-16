@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/css" href="student.css" ?>
+
+<students>
+	<student>
+		<name>Peter</name>
+		<usn>RVCE21MCA101</usn>
+		<branch>MCA</branch>
+		<year>2021</year>
+		<address>Address : RVCE, Bangalore</address>
+	</student>
+
+	<student>
+		<name>Susan</name>
+                <usn>RVCE21MCA102</usn>
+                <branch>MCA</branch>
+                <year>2021</year>
+                <address>Address : RVCE, Bangalore.</address>
+        </student>
+
+	<student>
+		<name>Edmund</name>
+                <usn>RVCE21MCA103</usn>
+                <branch>MCA</branch>
+                <year>2021</year>
+                <address>Address : RVCE, Bangalore.</address>
+        </student>
+
+	<student>
+		<name>Lucy</name>
+                <usn>RVCE21MCA104</usn>
+                <branch>MCA</branch>
+                <year>2021</year>
+                <address>Address : RVCE, Bangalore.</address>
+        </student>
+
+	<student>
+		<name>William</name>
+                <usn>RVCE21MCA105</usn>
+                <branch>MCA</branch>
+                <year>2021</year>
+                <address>Address : RVCE, Bangalore.</address>
+        </student>
+
+	<student>
+		<name>Anna</name>
+                <usn>RVCE21MCA106</usn>
+                <branch>MCA</branch>
+                <year>2021</year>
+                <address>Address : RVCE, Bangalore.</address>
+        </student>
+
+	<student>
+		<name>Skander</name>
+                <usn>RVCE21MCA107</usn>
+                <branch>MCA</branch>
+                <year>2021</year>
+                <address>Address : RVCE, Bangalore.</address>
+        </student>
+	
+	<student>
+		<name>Georgie</name>
+                <usn>RVCE21MCA108</usn>
+                <branch>MCA</branch>
+                <year>2021</year>
+                <address>Address : RVCE, Bangalore</address>
+        </student>
+</students>

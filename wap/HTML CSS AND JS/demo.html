@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>My_Js_Webpage</title>
+</head>
+<body>
+<h1>welcome to the website enter your login credentials</h1>
+<form>
+<lable for="username">username:</lable>
+<input type="text" id="username" name="username"><br><br>
+<lable for="password">password:</lable>
+<input type="password" id="password" name="password"><br><br>
+<input type="button" value="Login" onclick="myfunction()"><br>
+</form>
+<script>
+function myfunction(){
+    const a=document.getElementById("username").value;
+    const b=document.getElementById("password").value;
+   const c=/^RVCE22MCA(0[0-9][0-9]|1[0-1][0-9]|120)$/;
+   const d=/^(?=.[a-z])(?=.[A-z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+  if(!c.test(a) || !d.test(b)){
+       alert("invalid")
+     return;
+      }
+ const e=new Date();
+ const f=e.toLocaleTimeString();
+ const vijay=`welcome ${a} the current time is ${f}`;
+ alert(vijay);
+const year = e.getFullYear();
+const month = e.getMonth();
+const day = e.getDate();
+const g=window.open("", "_blank");
+g.document.write(`<html><head><title>mypage</title><style>body{background-color:red;}</style></head><body><h1>welcome ${a}</h1><h3>The current time is ${f} and year is ${year} and day ${day}</h3></body></html>`);
+}
+</script>
+</body>
+</html>	

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="prgrm1.css"?>
+<hotel>
+	<food>
+		<name>Idli</name>
+		<prepare>Vibha</prepare>
+		<price>45</price>
+		<counter>Indian</counter>
+	</food>
+        <food>
+                <name>Vade</name>
+                <prepare>Vibha</prepare>
+                <price>30</price>
+                <counter>Indian</counter>
+        </food>
+        <food>
+                <name>Fried Rice</name>
+                <prepare>Vibha</prepare>
+                <price>45</price>
+                <counter>North</counter>
+        </food>
+        <food>
+                <name>Chapathi</name>
+                <prepare>Vibha</prepare>
+                <price>50</price>
+                <counter>North</counter>
+        </food>
+        <food>
+                <name>Dose</name>
+                <prepare>Vibha</prepare>
+                <price>35</price>
+                <counter>South</counter>
+        </food>
+</hotel>
