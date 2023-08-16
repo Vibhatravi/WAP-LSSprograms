@@ -1,0 +1,120 @@
+<html>
+	<head>
+		<title>Program 5</title>
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+	</head>
+	<body>
+		<center>
+			<h2>Enter Values of students as comma saperated values</h2>
+			<input type="text" placeholder="Marks" id="marks" />
+			<button onclick="enterData()">Enter Data</button>
+			<button onclick="clearData()">Clear Data</button>
+			<div id="stdDetails"></div>
+			<button onclick="drawGraph()">Draw Graph</button>
+		</center>
+	</body>
+	<script defer>
+		let stdMarks = [];
+		function enterData(){
+			let marksNode = document.getElementById("marks");
+			let marks = marksNode.value.trim().split(",");
+			marks = marks.map(Number);
+			stdMarks = stdMarks.concat(marks);
+			console.log(stdMarks);
+			
+			let sd = document.getElementById("stdDetails");
+			for(let i=0; i<marks.length; i++){
+				let pTag = document.createElement("span");
+				const textnode = document.createTextNode(marks[i] + " ");
+				pTag.appendChild(textnode);
+				sd.appendChild(pTag);
+			}
+		}
+		
+		function clearData(){
+			let marksNode = document.getElementById("marks");
+			marksNode.value = "";
+			location.reload();
+		}
+
+		function drawGraph(){
+			drawBarGraph();
+			drawPieChart();
+		}
+
+		function drawBarGraph(){
+			if (stdMarks.length == 0){
+				console.log("Enter Data first");
+				return;
+			}
+	
+			var width = 500;
+			var scaleFactor = 5;
+			var barHeight = 20;
+	
+			var graph = d3.select("body")
+				.append("svg")
+				.attr("width",width)
+				.attr("height",barHeight*stdMarks.length)
+			var bar = graph.selectAll("g")
+				.data(stdMarks)
+				.enter()
+				.append("g")
+				.attr("transform",function(d,i){return "translate(0,"+i*barHeight+")"})
+				.attr("fill", "#ff366f")
+			bar.append("rect")
+				.attr("width",function(d){return d*scaleFactor})
+				.attr("height",barHeight-1)
+			bar.append("text")
+				.attr("x",function(d){return d*scaleFactor})
+				.attr("y",barHeight/2)
+				.attr("dy",".35em")
+				.text(function(d){return d})
+				// .attr("fill", "#3588ca")	
+		}
+
+		function drawPieChart(){
+			// var data = [1,2,4.4,2,1,5,4];
+  
+       			var svg = d3.select("body")
+				.append("svg")
+				.attr("width", 500)
+				.attr("height", 500)
+          
+        		// Creating Pie generator
+        		var pie = d3.pie();
+  
+       			// Creating arc
+       			var arc = d3.arc()
+                    		.innerRadius(0)
+                  		.outerRadius(100);
+  
+        		let g = svg.append("g")
+                   		.attr("transform", "translate(150,120)");
+  
+        		// Grouping different arcs
+        		var arcs = g.selectAll("arc")
+                    		.data(pie(stdMarks))
+                    		.enter()
+                    		.append("g");
+  
+        		// Appending path 
+        		arcs.append("path")
+            			.attr("fill", (data, i)=>{
+                			let value=data.data;
+                			return d3.schemeSet3[i+1];
+            		}).attr("d", arc);
+          
+        		// Adding data to each arc
+        		arcs.append("text")
+            			.attr("transform",(d)=>{ 
+                    			return "translate("+ 
+                    			arc.centroid(d) + ")"; 
+            			})
+            			.text(function(d){
+               				return d.data; 
+              			});
+			}
+	</script>
+</html>
+	

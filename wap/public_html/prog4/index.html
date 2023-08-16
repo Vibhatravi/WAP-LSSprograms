@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>Login</title>
+	<style>
+		.container{
+			border: 2px solid black;
+		}
+		form{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			padding: 10px;	
+		}
+		lable{
+			display: flex;
+			align-items: flex-start;
+			padding: 5px;
+		}
+		input{
+			padding: 5px;
+			margin-bottom: 10px;
+		}
+		button{
+			margin: 5px;
+			padding: 5px 10px;
+		}
+		#loginStatus{
+			padding: 10px;
+		}
+	</style>
+	</head>
+	<body>
+		<center>
+		<div class="container">
+		<h1>Login Page</h1>
+		<form>
+			<div>
+				<lable for="username"> UserName </lable>
+				<input type="text" id="username" name="username" required />
+			</div>
+			<div>
+				<lable for="password"> Password </lable>
+				<input type="password" id="password" name="password" required />
+			</div>
+			<button type="button" onclick="login()">Login</button>
+		</form>
+		</div>
+		<div id="loginStatus"></div>
+		</center>
+	</body>
+	<script>
+		function login(){
+			let usernamePattern = "^[a-zA-Z0-9_]{5,16}$";
+			let passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{8,}$";
+			let username = document.getElementById("username").value
+			let password = document.getElementById("password").value
+
+			if(!username.match(usernamePattern)){
+				alert("Invalid Name\n-Atleast 5 and atmost 16 characters allowed");
+				return; 
+			}
+			if(!password.match(passwordPattern)){
+				alert("Invalid Password\n-At least one upper case English letter.\n-At least one lower case English letter.\n-At least one digit.\n-At least one special character.\n-Minimum eight in length.");
+				return;
+			}
+
+			let now = new Date();
+			let ls = document.getElementById("loginStatus")
+			ls.innerText = `${username} logged in at ${now.toLocaleString()}`;
+			ls.style.backgroundColor = "#88ffa6";
+			document.body.style.backgroundColor = "rgb(216, 255, 222)";
+		}
+	</script>
+	

@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>Login</title>
+	</head>
+	<body>
+		<title>Login Page</title>
+		<form>
+			<lable for="username"> UserName </lable>
+			<input type="text" id="username" name="username" required />
+			<lable for="password"> Password </lable>
+			<input type="password" id="password" name="password" required />
+			<button type="button" onclick="login()">Login</button>
+		</form>
+		<div id="loginStatus"></center>
+	</body>
+	<script>
+		function login(){
+			let usernamePattern = "^[a-zA-Z0-9_]{5,16}$";
+			let passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{8,}$";
+			let username = document.getElementById("username").value
+			let password = document.getElementById("password").value
+
+			if(!username.match(usernamePattern)){
+				alert("Invalid Name\n-Atleast 5 and atmost 16 characters allowed");
+				return; 
+			}
+			if(!password.match(passwordPattern)){
+				alert("Invalid Password\n-At least one upper case English letter.\n-At least one lower case English letter.\n-At least one digit.\n-At least one special character.\n-Minimum eight in length.");
+				return;
+			}
+
+			let now = new Date();
+			document.getElementById("loginStatus").innerText= `${username} logged in at ${now.toLocaleString()}`;
+
+			document.body.style.backgroundColor = "#c0ffca";
+		}
+	</script>
+	

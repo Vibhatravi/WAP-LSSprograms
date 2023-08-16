@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<head>
+	<title> Sahara </title>
+</head>
+<body>
+	<header>  Sahara </br> Inventory management system </header>
+	<nav>
+		<ul>
+			<li> <a href="#"> logo </a> </li>
+			<li> <a href="/home"> home </a></li>
+			<li> <a href="/about"> About </a></li>
+			<li> <a href="/blog"> Blog </a></li>
+			<li> <a href="/products"> Products </a></li>
+		</ul>
+	</nav>
+	<main>
+	<aside>
+		<ul>
+			<li> <a href="/phones"> Phones </a></li>
+			<li> <a href="/laptops"> laptops </a></li>
+			<li> <a href="/tvs"> TVs </a></li>
+		</ul>
+	</aside>
+	<article>
+		<section>
+			<p> Product 1 </p>
+			<img src="./" alt="product1_img" />
+		</section>
+		<section>
+			<p> Product 2 </p>
+			<img src="./" alt="product2_img" />
+		</section>
+	</article>
+	</main>
+	<footer>
+		<p> Cc Allright reserved by sahara corp </p>
+		<p> Address: #01, section 52, main road 20 </p>
+		<p> For more details read <a href="#">content policy</a></p>
+	</footer>
+</body>
+<style>
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+header{
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	flex-direction: column;
+	background: #57a1ff;
+	color: white;
+	font-weight: bold;
+}
+
+nav{
+	padding-top: 1em;
+	background-color: #57a1ff;
+}
+
+nav ul{
+	justify-content: space-around;
+	width: 100vw;
+	display: flex;
+}
+
+li{
+	list-style-type: none;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+	font-size: 16px; 
+}
+aside{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	width: 15vw;
+	height: 80vh;
+	background-color: #8abdfd;
+	float: left;
+}
+
+aside li{
+	margin-bottom: 2em;
+}
+
+article{
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+section{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+}
+
+footer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #57a1ff;
+	color: white;
+}
+footer a{
+	color: wheat;
+}
+
+a:hover{
+font-weight: bold;
+font-style: italic;
+}
+
+section p:hover{
+color: red;
+}
+
+</style>
+</html>
