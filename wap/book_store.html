@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>bootstrap program</title>
+		<meta name="viewport" content="width=device-width",initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<style>
+			.jumbotron{ height:100px;
+					}
+			nav{ background-color:#bfb8bd;
+                       height:40px}
+			aside{float:right;}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<h1 class="jumbotron-sm|md|lg|xl bg-info text-center display-3 pt-1 mb-2 text-default"><b>BHATTI BOOK HOUSE</b></h1>
+		</div>
+		<div class="container-fluid">
+	 	<nav class="navbar navbar-expand-sm sticky-top navbar-dark justify-content-center">
+			<a class="navbar-brand" href="#"><img class="rounded-circle" src="https://static.vecteezy.com/system/resources/thumbnails/006/800/199/small/creative-abstract-book-feather-logo-design-vector.jpg" style="width:30px"></a>
+   			<a class="navbar-brand text-black" href="#"><b>Bhatti Book House</b></a>
+   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		    <ul class="navbar-nav">
+          		<li class="nav-item active">
+   		   			<a class="nav-link" href="#"><span class="fas fa-home"></span>Home</a>
+  		      	</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><span class="fas fa-book"></span>About</a>
+					   	<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="#">Medicines</a>
+							<a class="dropdown-item" href="#">Vacancy</a>
+						</div>
+					</li>
+	            <li class="nav-item">
+   		     		 <a class="nav-link" href="#"><span class="fas fa-phone"></span>Contact</a>
+ 	            </li>
+ 	       </ul>
+ 	    </div>
+ 	    </nav>
+		<div class="container">
+			<blockquote class="blockquote text-center pt-3">
+				<p>I believe that something very magical can happen when you read a good book.</p>
+				<footer class="blockquote-footer">-J.K.Rowling</footer>
+			</blockquote>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<h1>Books</h1>
+					<p>Books are humans <mark>good friends</mark>.A habit of reading builds our knowledge and contributes to intelligence.</p>
+				</div>
+				<div class="col-sm-6"><br><br><br><br><br><br><br>
+					<dl>
+						<dt>Authors</dt>
+						<dd>-"An author is 'the person who originated or gave existence to anything'"</dd>
+						<dt>Book</dt>
+						<dd>-"A book is a medium for recording information in the form of writing or images, typically composed of many pages bound together and protected by a cover."</dd>
+					</dl>
+				</div>
+				<div class="col-sm-3">
+					<h1>About us</h1>
+					<p>All genres of books are available at our book house.We too provide door step delivery of books.</p>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="card-deck">
+				<div class="card">
+					<div class="card-img-top"><img class="card-img-top" src="https://m.media-amazon.com/images/I/51btCZ-13mL.jpg"></div>
+					<div class="card-body">
+						<h3>One Indian Girl</h3>
+						<p>Chethan Bhagat</p>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-img-top"><img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61kRkfsIMUL.jpg"></div>
+					<div class="card-body">
+						<h3>Do Epic Shit</h3>
+						<p>Ankur Warikoo</p>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-img-top"><img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71+kA-j7XrL.jpg"></div>
+					<div class="card-body">
+						<h3>Doglapan</h3>
+						<p>Ashneer Grower</p>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-img-top"><img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/814WsemPz4L.jpg"></div>
+					<div class="card-body">
+						<h3>The art of focus</h3>
+						<p>Gouranga das</p>
+					</div>
+				</div>
+			</div>
+		</div>
+    	<div class="container pt-2">
+   		<table class="table table-info table-striped text-center">
+   		   <thead>
+        		<tr class="bg-dark text-white">
+         			<th>Sl.no</th>
+           			<th>Book name</th>
+					<th>Author</th>
+        			<th>Image</th>
+					<th>Price</th>
+					<th>      </th>
+       			</tr>
+        	</thead>
+       		<tbody>
+        		<tr>
+        	  		<td>1</td>
+          			<td>One Indian Girl</td>
+          			<td>Chethan Bhagath</td>
+					<td><img src="https://m.media-amazon.com/images/I/51btCZ-13mL.jpg" style="width:40px;height:min-content"></td>
+					<td>370</td>
+	    			<td><center><button class="btn btn-light">Buy</button></center></td>
+        		</tr>
+				<tr>
+					<td>2</td>
+					<td>Do Epic Shit</td>
+					<td>Ankur Warikoo</td>
+					<td><img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61kRkfsIMUL.jpg" style="width:40px;height:min-content"></td>
+					<td>400</td>
+				  	<td><center><button class="btn btn-light"><span class="spinner-border spinner-border-sm"></span>Buy</button></center></td>
+			  	</tr>
+        		<tr>
+          			<td>3</td>
+          			<td>Doglapan</td>
+					<td>Ashneer Grower</td>
+					<td><img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71+kA-j7XrL.jpg" style="width:40px;height:min-content"></td>
+          			<td>270</td>
+	    			<td><center><button class="btn btn-light" disabled>Buy</button></center></td>
+        		</tr>
+	  			<tr>
+          			<td>4</td>
+          			<td>The art of focus</td>
+					<td>Gouranga das</td>
+					<td><img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/814WsemPz4L.jpg" style="width:40px;height:min-content"></td>
+          			<td>180</td>
+	    			<td><center><button class="btn btn-light"><span class="spinner-grow spinner-grow-sm"></span>Buy</button></center></td>
+        		</tr>
+      		</tbody>
+       	</table>
+ 	</div>
+	<footer class="text-center pb-5">©Copyrights reserved</footer>
+</body>
+</html>
