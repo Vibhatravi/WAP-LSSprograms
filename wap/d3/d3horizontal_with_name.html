@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>D3 Vertical Bar Graph with Names</title>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <style>
+    svg text {
+      fill: red;
+      text-anchor: end;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var data = [];
+    var temp = prompt("Enter comma-separated values and names: ");
+    var tempArray = temp.split(",");
+    for (var i = 0; i < tempArray.length; i += 2) {
+      data.push({ value: parseFloat(tempArray[i]), name: tempArray[i + 1] });
+    }
+    var width = 1800;
+    var scaleFactor = 15;
+    var barHeight = 20;
+
+    var graph = d3.select("body")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", barHeight * data.length);
+
+    var bar = graph.selectAll("g")
+      .data(data)
+      .enter()
+      .append("g")
+      .attr("transform", function(d, i) {
+        return "translate(0," + i * barHeight + ")";
+      });
+
+    bar.append("rect")
+      .attr("width", function(d) {
+        return d.value * scaleFactor;
+      })
+      .attr("height", barHeight - 1)
+      .style("fill",function(d){
+      	if (d.value < 15){
+      		return "lightblue";
+      		}
+      	else if(d.value < 30){
+      		return "lightpink";
+      		}
+      	else{
+      		return "red";}});
+
+    bar.append("text")
+      .attr("x", function(d) {
+        return d.value * scaleFactor - 5;
+      })
+      .attr("y", barHeight / 2)
+      .attr("dy", ".35em")
+      .text(function(d) {
+        return d.name;
+      });
+  </script>
+</body>
+</html>
+

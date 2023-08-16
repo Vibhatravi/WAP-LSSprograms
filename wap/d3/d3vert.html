@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>D3 Vertical Bar Graph</title>
+		<script src="https://d3js.org/d3.v4.js"></script>
+		<style>
+			svg text {
+				fill: red;
+				text-anchor: middle;
+			}
+			svg rect {
+				fill: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			var data = [];
+			var temp = prompt("Enter comma-separated values: ");
+			data = temp.split(",");
+			var height = 500;
+			var scaleFactor = 15;
+			var barWidth = 80;
+			
+			var graph = d3.select("body")
+				.append("svg")
+				.attr("width", barWidth * data.length)
+				.attr("height", height);
+					
+			var bar = graph.selectAll("g")
+				.data(data)
+				.enter()
+				.append("g")
+				.attr("transform", function(d, i) {
+					return "translate(" + i * barWidth + ",0)";
+				});
+					
+			bar.append("rect")
+				.attr("width", barWidth - 1)
+				.attr("height", function(d) {
+					return d * scaleFactor;
+				})
+				.attr("y", function(d) {
+					return height - d * scaleFactor;
+				});
+				
+			bar.append("text")
+				.attr("x", barWidth / 2)
+				.attr("y", function(d) {
+					return height - d * scaleFactor + 9;
+				})
+				.attr("dy", "0.35em")
+				.text(function(d) {
+					return d;
+				});
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+      }
+      .container {
+        margin: auto;
+        width: 50%;
+        border: 3px solid #f1f1f1;
+        padding: 10px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        border: none;
+        background: #f1f1f1;
+      }
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+      .success {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Login</h2>
+      <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" onclick="login()">Login</button>
+      </form>
+    </div>
+    <script>
+      function login() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Validate username and password using match()
+        const usernamePattern = /^[a-zA-Z0-9_]{3,16}$/;
+        const passwordPattern = /^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[a-zA-Z]).{8,}$/;
+
+        if (!username.match(usernamePattern)) {
+          alert("Invalid username. Must be between 3 and 16 characters long, and may contain only letters, numbers, and underscores.");
+        } else if (!passwordPattern.match(password)) {
+          alert("Invalid password. Must be at least 8 characters long, and must contain at least one lowercase letter, one uppercase letter, and one number.");
+        } else {
+          const date = new Date();
+          const time = date.toLocaleTimeString();
+
+          // Display username and time on successful login
+          document.body.innerHTML += `<div class="success">Welcome ${username}! You logged in at ${time}.</div>`;
+
+          // Change background color of the page
+          document.body.style.backgroundColor = "#e6ffe6";
+        }
+      }
+    </script>
+  </body>
+</html>	

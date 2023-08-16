@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>D3 Vertical Bar Graph with Vertical Names</title>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <style>
+    svg text {
+      fill: red;
+      text-anchor: middle;
+    }
+   svg{border-bottom:1px solid black;
+   	border-left:1px solid black;
+   	padding:10px;
+   	margin:20px;}
+  </style>
+</head>
+<body>
+  <script>
+    var data = [];
+    var temp = prompt("Enter comma-separated values and names: ");
+    var tempArray = temp.split(",");
+    for (var i = 0; i < tempArray.length; i += 2) {
+      data.push({ value: parseFloat(tempArray[i]), name: tempArray[i + 1] });
+    }
+    var height = 800;
+    var scaleFactor = 15;
+    var barWidth = 40;
+
+    var graph = d3.select("body")
+      .append("svg")
+      .attr("width", barWidth * data.length)
+      .attr("height", height);
+
+    var bar = graph.selectAll("g")
+      .data(data)
+      .enter()
+      .append("g")
+      .attr("transform", function(d, i) {
+        return "translate(" + i * barWidth + ",0)";
+      });
+
+    bar.append("rect")
+      .attr("width", barWidth - 1)
+      .attr("height", function(d) {
+        return d.value * scaleFactor;
+      })
+      .attr("y", function(d) {
+        return height - d.value * scaleFactor;
+      })
+      .style("fill",function(d){
+      		if(d.value<10){
+      			return "blue";}
+      		else if(d.value<20){
+      			return "green";}
+      		else{
+      			return "pink";}
+      		});
+
+    bar.append("text")
+      .attr("x", barWidth / 2)
+      .attr("y", function(d) {
+        return height - d.value * scaleFactor;
+      })
+      .attr("dy", "0.35em")
+      .attr("transform", function(d) {
+        return "rotate(-90, " + (barWidth / 2) + ", " + (height - d.value * scaleFactor + 3) + ")"; // Rotate the text vertically
+      })
+      .style("text-anchor", "end")
+      .text(function(d) {
+        return d.name;
+      });
+      
+   var txt=d3.select("body")
+   		.append("p")
+   		.text(function(d){return d;});
+  </script>
+</body>
+</html>
+
